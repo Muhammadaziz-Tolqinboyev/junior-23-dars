@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>11-Dars: Landing Page Yakunlash | Student</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { --pdp-blue: #083036; --pdp-cyan: #08E1F0; --white: #ffffff; }
+    body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--white); color: var(--pdp-blue); overflow: hidden; }
+    .slide { display: none; height: 100vh; width: 100%; padding: 40px; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+    .slide.active { display: flex; animation: slideIn 0.5s ease-out; }
+    @keyframes slideIn { from { opacity: 0; transform: translateX(50px); } to { opacity: 1; transform: translateX(0); } }
+    .glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(15px); border: 2px solid var(--pdp-cyan); border-radius: 32px; padding: 40px; box-shadow: 0 20px 40px rgba(8, 225, 240, 0.15); width: 100%; max-width: 1100px; }
+    .feature-card { background: white; border: 1px solid #eee; border-radius: 20px; transition: 0.3s; padding: 20px; }
+    .feature-card:hover { border-color: var(--pdp-cyan); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .code-snippet { background: #1e293b; color: #f8fafc; padding: 15px; border-radius: 12px; font-family: 'Fira Code', monospace; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <div class="fixed top-8 left-8 z-50 flex items-center gap-3">
+    <div class="w-10 h-10 bg-[#083036] rounded-xl flex items-center justify-center"><i data-lucide="check-circle" class="text-[#08E1F0] w-6 h-6"></i></div>
+    <span class="text-2xl font-extrabold uppercase tracking-tighter">PDP <span class="text-[#08E1F0]">Junior</span></span>
+  </div>
+  
+  <div id="presentation">
+    <!-- Slide 1: Welcome Back -->
+    <div class="slide active">
+      <div class="glass text-center">
+        <span class="bg-[#08E1F0] text-[#083036] px-4 py-1 rounded-full text-xs font-bold mb-4 inline-block italic underline">FINAL BOSQICH</span>
+        <h1 class="text-7xl font-extrabold mb-6 leading-tight">11-Dars: <br><span class="text-[#08E1F0]">Landing Page</span> Yakuniy Bezak</h1>
+        <p class="text-2xl text-slate-500 mb-10 max-w-2xl mx-auto">Bugun biz loyihani to'liq yakunlaymiz. Features, Contact va Footer qismlarini qo'shamiz!</p>
+        <button onclick="nextSlide()" class="bg-[#083036] text-[#08E1F0] px-12 py-4 rounded-full font-bold text-xl hover:scale-105 transition-all">Davom etamiz 🚀</button>
+      </div>
+    </div>
+    
+    <!-- Slide 2: Review -->
+    <div class="slide">
+      <div class="glass">
+        <h2 class="text-4xl font-bold mb-8 text-center text-[#083036]">O'tgan Darsda Nima Qildik? 🗓️</h2>
+        <div class="grid grid-cols-3 gap-6">
+          <div class="p-6 bg-slate-50 rounded-2xl text-center opacity-50 border-2 border-slate-200">
+            <i data-lucide="layout-template" class="mx-auto mb-4 w-10 h-10"></i>
+            <h4 class="font-bold">Header</h4>
+            <p class="text-xs">Logo va Navigatsiya</p>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-2xl text-center opacity-50 border-2 border-slate-200">
+            <i data-lucide="zap" class="mx-auto mb-4 w-10 h-10"></i>
+            <h4 class="font-bold">Hero Section</h4>
+            <p class="text-xs">Asosiy sarlavha va rasm</p>
+          </div>
+          <div class="p-6 bg-cyan-50 rounded-2xl text-center border-2 border-[#08E1F0] animate-pulse">
+            <i data-lucide="plus-circle" class="mx-auto mb-4 w-10 h-10 text-[#08E1F0]"></i>
+            <h4 class="font-bold text-[#083036]">Bugungi Reja</h4>
+            <p class="text-xs">Services, Contact, Footer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 3: Services Section -->
+    <div class="slide">
+      <div class="glass">
+        <h2 class="text-4xl font-bold mb-8">Xizmatlar Bo'limi (Services) 🛠️</h2>
+        <div class="grid grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <p class="text-lg text-slate-600">Bu bo'limda odatda **Grid** yoki **Flexbox** orqali kartochkalar joylashtiriladi:</p>
+            <div class="feature-card flex gap-4 items-start">
+              <div class="bg-cyan-100 p-3 rounded-lg"><i data-lucide="code-2" class="text-cyan-600"></i></div>
+              <div>
+                <h4 class="font-bold">Web Development</h4>
+                <p class="text-sm opacity-60">Professional saytlar yaratish.</p>
+              </div>
+            </div>
+            <div class="feature-card flex gap-4 items-start">
+              <div class="bg-purple-100 p-3 rounded-lg"><i data-lucide="palette" class="text-purple-600"></i></div>
+              <div>
+                <h4 class="font-bold">UI/UX Design</h4>
+                <p class="text-sm opacity-60">Chiroyli dizaynlar chizish.</p>
+              </div>
+            </div>
+          </div>
+          <div class="code-snippet overflow-auto">
+            <pre>
+              /* CSS Grid misoli */
+              .services-grid {
+                display: grid;
+                grid-template-columns: 
+                repeat(3, 1fr);
+                gap: 20px;
+              }
+              .card {
+                padding: 20px;
+                border-radius: 15px;
+              }
+            </pre>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 4: Contact Section -->
+    <div class="slide">
+      <div class="glass">
+        <h2 class="text-4xl font-bold mb-8 text-center">Bog'lanish (Contact) 📞</h2>
+        <div class="grid grid-cols-2 gap-10">
+          <div class="bg-white p-8 rounded-3xl border-2 border-slate-100 shadow-inner">
+            <h3 class="font-bold mb-4 text-xl">Kontakt tarkibi:</h3>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3"><i data-lucide="mail" class="text-cyan-500"></i> Form (Ism, Email, Xabar)</li>
+              <li class="flex items-center gap-3"><i data-lucide="map-pin" class="text-red-500"></i> Manzil (Address)</li>
+              <li class="flex items-center gap-3"><i data-lucide="phone" class="text-green-500"></i> Telefon: <code class="text-xs bg-slate-100 p-1">tel:+998...</code></li>
+              <li class="flex items-center gap-3"><i data-lucide="map" class="text-blue-500"></i> Xarita (Image/Iframe)</li>
+            </ul>
+          </div>
+          <div class="space-y-4">
+            <p class="text-sm font-bold opacity-50 uppercase">Forma namunasi:</p>
+            <div class="space-y-3">
+              <input type="text" placeholder="Ismingiz" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50">
+              <input type="email" placeholder="Emailingiz" class="w-full p-3 rounded-xl border border-slate-200 bg-slate-50">
+              <textarea placeholder="Xabaringiz" class="w-full p-3 h-24 rounded-xl border border-slate-200 bg-slate-50"></textarea>
+              <button class="w-full bg-[#08E1F0] text-[#083036] font-bold py-3 rounded-xl">Yuborish</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Slide 5: Footer -->
+    <div class="slide">
+      <div class="glass">
+        <h2 class="text-4xl font-bold mb-8 text-center uppercase tracking-tighter">Footer: Saytning Yakuni 🏁</h2>
+        <div class="bg-[#083036] text-white p-10 rounded-[32px] grid grid-cols-3 gap-8">
+          <div>
+            <h4 class="text-[#08E1F0] font-bold mb-4">PDP JUNIOR</h4>
+            <p class="text-xs opacity-60">Kelajak dasturchilari akademiyasi. Biz bilan o'rganish oson!</p>
+          </div>
+          <div>
+            <h4 class="text-[#08E1F0] font-bold mb-4">Havolalar</h4>
+            <ul class="text-xs space-y-2 opacity-80">
+              <li>Bosh sahifa</li>
+              <li>Xizmatlar</li>
+              <li>Biz haqimizda</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-[#08E1F0] font-bold mb-4">Tarmoqlar</h4>
+            <div class="flex gap-4">
+              <i data-lucide="instagram" class="w-5 h-5"></i>
+              <i data-lucide="facebook" class="w-5 h-5"></i>
+              <i data-lucide="telegram" class="w-5 h-5"></i>
+            </div>
+          </div>
+        </div>
+        <p class="text-center mt-8 text-slate-400 text-sm">© 2024 Barcha huquqlar himoyalangan.</p>
+      </div>
+    </div>
+    
+    <!-- Slide 6: Practical Task -->
+    <div class="slide">
+      <div class="glass border-red-400">
+        <h2 class="text-4xl font-black mb-8 text-center text-red-500 uppercase">AMALIYOT: LOYIHANI YAKUNLANG! 🛠️</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="p-8 rounded-3xl bg-slate-50 border-4 border-dashed border-slate-200">
+            <h3 class="text-2xl font-bold mb-4">Topshiriqlar:</h3>
+            <ul class="space-y-4">
+              <li class="flex gap-3"><span class="bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs">1</span> <b>Services:</b> 3 ta xizmatni Grid orqali joylang.</li>
+              <li class="flex gap-3"><span class="bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs">2</span> <b>Contact:</b> Ism, Email va Xabar yozish formasini yasang.</li>
+              <li class="flex gap-3"><span class="bg-red-500 text-white w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 text-xs">3</span> <b>Footer:</b> Saytning eng quyi qismini stillang.</li>
+            </ul>
+          </div>
+          <div class="bg-[#083036] text-white p-8 rounded-3xl flex flex-col justify-center">
+            <h3 class="text-2xl font-bold mb-4 text-[#08E1F0]">Sizning Landing Page-ingiz tayyor bo'lishi kerak! ✨</h3>
+            <p class="opacity-70 italic">"Dizaynga e'tibor bering: ranglar bir xil gammaning ichida bo'lsin va oraliq masofalar (padding/margin) bir xil bo'lishiga harakat qiling."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Navigation -->
+  <div class="fixed bottom-10 left-0 w-full flex justify-center items-center gap-10 z-50">
+    <button onclick="changeSlide(-1)" class="w-14 h-14 rounded-full bg-[#083036] text-[#08E1F0] flex items-center justify-center hover:scale-110 transition-all opacity-50" id="prevBtn">
+      <i data-lucide="chevron-left"></i>
+    </button>
+    <div id="dots" class="flex gap-3"></div>
+    <button onclick="changeSlide(1)" class="w-14 h-14 rounded-full bg-[#083036] text-[#08E1F0] flex items-center justify-center hover:scale-110 transition-all" id="nextBtn">
+      <i data-lucide="chevron-right"></i>
+    </button>
+  </div>
+  
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.getElementById('dots');
+    
+    slides.forEach((_, i) => {
+      const dot = document.createElement('div');
+      dot.className = `h-3 rounded-full transition-all duration-300 ${i === 0 ? 'w-10 bg-[#08E1F0]' : 'w-3 bg-slate-300'}`;
+      dot.id = `dot-${i}`;
+      dotsContainer.appendChild(dot);
+    });
+    
+    function changeSlide(n) {
+      const newIndex = currentSlide + n;
+      if (newIndex >= 0 && newIndex < slides.length) {
+        slides[currentSlide].classList.remove('active');
+        document.getElementById(`dot-${currentSlide}`).classList.replace('w-10', 'w-3');
+        document.getElementById(`dot-${currentSlide}`).classList.replace('bg-[#08E1F0]', 'bg-slate-300');
+        
+        currentSlide = newIndex;
+        
+        slides[currentSlide].classList.add('active');
+        document.getElementById(`dot-${currentSlide}`).classList.replace('w-3', 'w-10');
+        document.getElementById(`dot-${currentSlide}`).classList.replace('bg-slate-300', 'bg-[#08E1F0]');
+        
+        document.getElementById('prevBtn').style.opacity = currentSlide === 0 ? '0.5' : '1';
+        document.getElementById('nextBtn').style.opacity = currentSlide === slides.length - 1 ? '0.5' : '1';
+        lucide.createIcons();
+      }
+    }
+    
+    window.onload = () => lucide.createIcons();
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "ArrowRight") changeSlide(1);
+      if (e.key === "ArrowLeft") changeSlide(-1);
+    });
+  </script>
+</body>
+</html>
